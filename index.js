@@ -2,11 +2,17 @@ const FizzBuzz = require('./emitter');
 
 const fizz1 = new FizzBuzz();
 fizz1.on("messageRecu", function(payload) {
-	if( payload % 5 == 0 ){
+	if( payload % 5 == 0 && payload % 3 == 0 ){
+		console.log('FizzBuzz');
+	}
+	else if ( payload %  5 == 0){
 		console.log('Buzz');
 	}
+	else if (payload % 3 == 0){
+		console.log('Fizz');
+	}
 	else {
-		console.log("fizz 1: payload =>", payload)
+		console.log(payload)
 	}
 })
 
